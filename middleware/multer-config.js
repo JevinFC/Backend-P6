@@ -17,7 +17,7 @@ const processImage = async (req, res, next) => {
   try {
     // Traitement de l'image avec Sharp
     await sharp(req.file.buffer)
-      .resize({ width: 200, height: 260, fit: "cover" }) // Redimensionner à 500px de large (hauteur ajustée automatiquement)
+      .resize({ width: 200, height: 260, fit: "cover" }) // Redimensionner à 200px de large et 260px de haut
       .jpeg({ quality: 80 }) // Convertir en JPEG avec 80% de qualité
       .toFile(filePath);
 
@@ -31,4 +31,3 @@ const processImage = async (req, res, next) => {
 };
 
 module.exports = { upload, processImage };
-//Taille du livre = 200x260 environ
